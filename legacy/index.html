@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NXT Softwares — We Build What's Next</title>
+<meta name="description" content="NXT Softwares — a software team building digital systems for businesses. Web. Mobile. AI.">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050506'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='%23D6B56D' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css?v=6">
+<link rel="stylesheet" href="css/sections.css?v=11">
+<noscript>
+<style>
+  [data-reveal]{opacity:1!important;transform:none!important}
+  .cursor{display:none!important}
+  body{overflow:auto!important}
+</style>
+</noscript>
+</head>
+<body class="welcome-hold">
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"></div>
+</div>
+
+<!-- WELCOME GATE — AnimatedText port -->
+<div id="welcome" class="welcome" role="dialog" aria-modal="true" aria-label="Welcome to NXT" hidden>
+  <div class="welcome__scrim" aria-hidden="true"></div>
+  <div class="welcome__panel">
+    <span class="welcome__kicker">NXT Softwares</span>
+    <h2 class="welcome__title" id="welcomeTitle">Welcome to NXT</h2>
+    <div class="welcome__underline" aria-hidden="true"></div>
+    <p class="welcome__sub">We build what's next.</p>
+    <ul class="welcome__list"><li>Digital products</li><li>AI systems</li><li>Business solutions</li></ul>
+    <button class="welcome__enter" id="enterBtn">Enter NXT <span aria-hidden="true">→</span></button>
+  </div>
+</div>
+
+<!-- 1 · NAV -->
+<header id="nav" class="nav">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__logo">NXT<span>SOFTWARES</span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#what-we-build">Services</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#about">About</a>
+      <a href="#ai">Insights</a>
+    </nav>
+    <div class="nav__right">
+      <a href="#consultation" class="btn btn--ghost btn--sm nav__cta">Let's Talk</a>
+      <button id="burger" class="nav__burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<div id="mobileMenu" class="mmenu" hidden>
+  <nav class="mmenu__links" aria-label="Mobile">
+    <a href="#what-we-build">Services</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#about">About</a>
+    <a href="#ai">Insights</a>
+  </nav>
+  <a href="#consultation" class="btn btn--gold mmenu__cta">Let's Talk →</a>
+</div>
+
+<main>
+  <!-- 3 · HERO -->
+  <section id="hero" class="hero">
+    <div class="hero__frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="hero__inner" id="heroInner">
+      <div class="hero__copy">
+        <span class="eyebrow" data-reveal>NXT SOFTWARES · DIGITAL PRODUCT STUDIO</span>
+        <h1 class="hero__title">
+          <span class="hero__line" data-reveal="left" style="--d:.05s">WE BUILD</span>
+          <span class="hero__line" data-reveal="right" style="--d:.18s">WHAT'S</span>
+          <span class="hero__line" data-reveal="up" style="--d:.32s"><em>NEXT.</em></span>
+        </h1>
+        <p class="hero__sub" data-reveal style="--d:.28s">
+          <span class="hero__stack">Web. Mobile. AI.</span><br>
+          Digital products engineered for real businesses.
+        </p>
+        <div class="hero__ctas" data-reveal style="--d:.4s">
+          <a href="#consultation" class="btn btn--gold">Start a Project <span class="btn__arr">→</span></a>
+        </div>
+      </div>
+      <div class="hero__visual-wrap">
+      <div class="hero__visual" id="heroVisual">
+        <div class="hero__orb" aria-hidden="true"><i class="orb orb--a"></i><i class="orb orb--b"></i><span class="orb__core"></span></div>
+        <div class="fcard fcard--dash" aria-hidden="true">
+          <header><i></i><i></i><i></i></header>
+          <div class="fcard__bars">
+            <i style="--h:34%"></i><i style="--h:58%"></i><i style="--h:42%"></i>
+            <i style="--h:76%"></i><i style="--h:52%"></i><i style="--h:88%"></i>
+          </div>
+          <footer>LIVE SYSTEMS</footer>
+        </div>
+        <div class="fcard fcard--code" aria-hidden="true">
+          <pre><span class="c-k">const</span> <span class="c-v">product</span> = <span class="c-k">await</span> nxt.<span class="c-f">build</span>({
+  stack: [<span class="c-s">'web'</span>, <span class="c-s">'mobile'</span>, <span class="c-s">'ai'</span>],
+  deploy: <span class="c-k">true</span>
+});</pre>
+        </div>
+        <div class="fcard fcard--ai" aria-hidden="true"><span class="fcard__dot"></span> AI · analyzing workflow</div>
+        <div class="fcard fcard--stat" aria-hidden="true"><b>+38%</b><span>customer engagement</span></div>
+      </div>
+      <div class="hero__fade" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · WHAT WE BUILD -->
+  <section id="what-we-build" class="wwb section">
+    <div class="shead">
+      <span class="eyebrow" data-reveal>SERVICES</span>
+      <h2 class="shead__title" data-reveal style="--d:.1s">WHAT WE BUILD</h2>
+    </div>
+    <div class="wwb__grid">
+      <div class="wwb__list" role="tablist" aria-label="Services">
+        <button class="wwb__item is-active" role="tab" aria-selected="true" data-i="0"><span>01</span>DIGITAL PRODUCTS</button>
+        <button class="wwb__item" role="tab" aria-selected="false" data-i="1"><span>02</span>AI SOLUTIONS</button>
+        <button class="wwb__item" role="tab" aria-selected="false" data-i="2"><span>03</span>WEB APPLICATIONS</button>
+        <button class="wwb__item" role="tab" aria-selected="false" data-i="3"><span>04</span>MOBILE APPLICATIONS</button>
+        <button class="wwb__item" role="tab" aria-selected="false" data-i="4"><span>05</span>AUTOMATION</button>
+        <button class="wwb__item" role="tab" aria-selected="false" data-i="5"><span>06</span>CONSULTING</button>
+      </div>
+      <div class="wwb__panel" id="wwbPanel" data-v="0">
+        <div class="wwb__stage">
+          <div class="wwb__vis wwb__vis--journey" aria-hidden="true">
+            <div class="jnode is-on"><b>IDEA</b><span>requirements</span></div>
+            <div class="jline"><i></i></div>
+            <div class="jnode"><b>ARCHITECTURE</b><span>system design</span></div>
+            <div class="jline"><i></i></div>
+            <div class="jnode"><b>DEPLOYMENT</b><span>live product</span></div>
+          </div>
+          <div class="wwb__vis wwb__vis--neural" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="wwb__vis wwb__vis--browser" aria-hidden="true">
+            <div class="browser"><header><i></i><i></i><i></i><em>nxtsoftwares.com</em></header>
+              <div class="browser__body"><b></b><span></span><span class="short"></span><span></span></div>
+            </div>
+          </div>
+          <div class="wwb__vis wwb__vis--phone" aria-hidden="true">
+            <div class="phone"><i class="phone__notch"></i><b></b><span></span><span class="short"></span><span></span><i class="phone__cta"></i></div>
+          </div>
+          <div class="wwb__vis wwb__vis--flow" aria-hidden="true">
+            <div class="fbox">MANUAL</div><div class="farrow">→</div>
+            <div class="fbox fbox--ai">AI / AUTOMATED<em>✦</em></div><div class="farrow">→</div>
+            <div class="fbox">INTEGRATED</div>
+          </div>
+          <div class="wwb__vis wwb__vis--plan" aria-hidden="true">
+            <div class="plan">
+              <div class="plan__node"><b>TODAY</b><span>audit</span></div>
+              <i class="plan__line"></i>
+              <div class="plan__node"><b>90 DAYS</b><span>roadmap</span></div>
+              <i class="plan__line"></i>
+              <div class="plan__node plan__node--goal"><b>GOAL</b><span>direction</span></div>
+            </div>
+          </div>
+        </div>
+        <h3 class="wwb__title" id="wwbTitle">DIGITAL PRODUCTS</h3>
+        <p class="wwb__desc" id="wwbDesc">From idea → architecture → deployment. We take products end to end.</p>
+        <ul class="tag-row" id="wwbChips"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · PHILOSOPHY -->
+  <section id="philosophy" class="phil section">
+    <div class="phil__lines">
+      <p class="phil__line phil__line--a" data-reveal>GOOD SOFTWARE<br><span>SOLVES PROBLEMS.</span></p>
+      <p class="phil__line phil__line--b" data-reveal style="--d:.15s">GREAT SOFTWARE<br><span>CHANGES HOW<br>PEOPLE WORK.</span></p>
+    </div>
+    <div class="phil__words" aria-label="Think. Build. Evolve.">
+      <div class="phil__word phil__word--think"><span>THINK</span><em>before code.</em></div>
+      <div class="phil__word phil__word--build"><span>BUILD</span><em>with precision.</em></div>
+      <div class="phil__word phil__word--evolve"><span>EVOLVE</span><em>after launch.</em></div>
+    </div>
+    <div class="phil__fin" aria-hidden="true"><span>NXT</span><i></i></div>
+  </section>
+
+  <!-- 6 · SOLUTIONS -->
+  <section id="solutions" class="sol section">
+    <div class="shead">
+      <span class="eyebrow" data-reveal>SOLUTIONS</span>
+      <h2 class="shead__title" data-reveal style="--d:.1s">WHAT ARE YOU TRYING TO SOLVE?</h2>
+    </div>
+    <div class="sol__grid">
+      <div class="sol__list" role="radiogroup" aria-label="Problems">
+        <button class="sol__opt" role="radio" aria-checked="false" data-s="website">BUILD A WEBSITE</button>
+        <button class="sol__opt" role="radio" aria-checked="false" data-s="app">BUILD AN APP</button>
+        <button class="sol__opt is-active" role="radio" aria-checked="true" data-s="ai">BUILD AN AI SYSTEM</button>
+        <button class="sol__opt" role="radio" aria-checked="false" data-s="automate">AUTOMATE MY BUSINESS</button>
+        <button class="sol__opt" role="radio" aria-checked="false" data-s="upgrade">UPGRADE MY SOFTWARE</button>
+        <button class="sol__opt" role="radio" aria-checked="false" data-s="idea">I HAVE AN IDEA</button>
+      </div>
+      <div class="sol__panel" id="solPanel">
+        <span class="sol__kicker" id="solKicker">AI SYSTEM</span>
+        <h3 class="sol__title" id="solTitle">AI that understands your business.</h3>
+        <ol class="sol__flow" id="solFlow">
+          <li><i>01</i>Problem</li>
+          <li><i>02</i>AI System</li>
+          <li><i>03</i>Integration</li>
+          <li><i>04</i>Business result</li>
+        </ol>
+        <p class="sol__note" id="solNote">We start from the business problem, design the AI system around it, integrate it with your tools — and measure the result.</p>
+        <a href="#consultation" class="btn btn--ghost">Discuss This Solution <span class="btn__arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · INDUSTRIES -->
+  <section id="industries" class="ind">
+    <div class="ind__track" id="indTrack">
+      <div class="ind__sticky">
+        <div class="shead ind__head">
+          <span class="eyebrow" data-reveal>INDUSTRIES</span>
+          <h2 class="shead__title" data-reveal style="--d:.1s">BUILT FOR<br>REAL BUSINESS.</h2>
+        </div>
+        <div class="ind__stage" id="indStage">
+          <article class="ind__panel is-active" data-i="0">
+            <span class="ind__num">01</span>
+            <div class="ind__body"><h3>FINTECH</h3><p class="ind__tag">Money moves faster in good systems.</p>
+              <ul><li>Payments infrastructure</li><li>Fraud detection</li><li>Customer dashboards</li><li>Compliance workflows</li><li>AI advisors</li></ul></div>
+          </article>
+          <article class="ind__panel" data-i="1">
+            <span class="ind__num">02</span>
+            <div class="ind__body"><h3>RETAIL</h3><p class="ind__tag">Selling is a system, not a struggle.</p>
+              <ul><li>E-commerce builds</li><li>Inventory systems</li><li>Personalization</li><li>POS integrations</li><li>Demand forecasting</li></ul></div>
+          </article>
+          <article class="ind__panel" data-i="2">
+            <span class="ind__num">03</span>
+            <div class="ind__body"><h3>HOSPITALITY</h3><p class="ind__tag">Service that scales without losing warmth.</p>
+              <ul><li>Digital ordering</li><li>Reservations</li><li>Customer engagement</li><li>AI support</li><li>Business analytics</li></ul></div>
+          </article>
+          <article class="ind__panel" data-i="3">
+            <span class="ind__num">04</span>
+            <div class="ind__body"><h3>HEALTHCARE</h3><p class="ind__tag">Care supported by calm software.</p>
+              <ul><li>Patient portals</li><li>Scheduling systems</li><li>Records workflows</li><li>AI triage assistants</li><li>Data security</li></ul></div>
+          </article>
+          <article class="ind__panel" data-i="4">
+            <span class="ind__num">05</span>
+            <div class="ind__body"><h3>REAL ESTATE</h3><p class="ind__tag">Property, minus the paperwork.</p>
+              <ul><li>Listing platforms</li><li>CRM automation</li><li>Virtual tours</li><li>Document workflows</li><li>Market analytics</li></ul></div>
+          </article>
+          <article class="ind__panel" data-i="5">
+            <span class="ind__num">06</span>
+            <div class="ind__body"><h3>EDUCATION</h3><p class="ind__tag">Learning platforms people actually use.</p>
+              <ul><li>Learning platforms</li><li>Student portals</li><li>Course management</li><li>AI tutoring</li><li>Progress analytics</li></ul></div>
+          </article>
+          <article class="ind__panel" data-i="6">
+            <span class="ind__num">07</span>
+            <div class="ind__body"><h3>STARTUPS</h3><p class="ind__tag">From idea to MVP, fast.</p>
+              <ul><li>MVP development</li><li>Product strategy</li><li>Rapid iteration</li><li>Cloud architecture</li><li>Investor-ready demos</li></ul></div>
+          </article>
+          <article class="ind__panel" data-i="7">
+            <span class="ind__num">08</span>
+            <div class="ind__body"><h3>SMALL BUSINESS</h3><p class="ind__tag">Big-business tools, right-sized.</p>
+              <ul><li>Websites that convert</li><li>Booking systems</li><li>Invoicing &amp; billing</li><li>Routine-work automation</li><li>Affordable AI tools</li></ul></div>
+          </article>
+        </div>
+        <div class="ind__dots" id="indDots" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · PROCESS -->
+  <section id="process" class="proc section">
+    <div class="shead">
+      <span class="eyebrow" data-reveal>HOW WE BUILD</span>
+      <h2 class="shead__title" data-reveal style="--d:.1s">FROM IDEA<br>TO PRODUCT.</h2>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="timeline__line" aria-hidden="true"><i id="timelineFill"></i></div>
+      <div class="stage">
+        <button class="stage__head" aria-expanded="false"><span class="stage__num">01</span><span class="stage__name">DISCOVER</span><i class="stage__plus"></i></button>
+        <div class="stage__body"><div class="stage__inner"><p>Goals, users and constraints — we learn the business before touching code.</p>
+          <ul class="tag-row"><li>Goals</li><li>Users</li><li>Risks</li><li>Scope</li></ul></div></div>
+      </div>
+      <div class="stage">
+        <button class="stage__head" aria-expanded="false"><span class="stage__num">02</span><span class="stage__name">DEFINE</span><i class="stage__plus"></i></button>
+        <div class="stage__body"><div class="stage__inner"><p>Requirements become a clear roadmap with priorities and estimates.</p>
+          <ul class="tag-row"><li>Requirements</li><li>Priorities</li><li>Roadmap</li><li>Estimates</li></ul></div></div>
+      </div>
+      <div class="stage">
+        <button class="stage__head" aria-expanded="false"><span class="stage__num">03</span><span class="stage__name">DESIGN</span><i class="stage__plus"></i></button>
+        <div class="stage__body"><div class="stage__inner"><p>Wireframes to polished UI — clickable prototypes before development.</p>
+          <ul class="tag-row"><li>Wireframes</li><li>UI Design</li><li>Prototype</li><li>Design System</li></ul></div></div>
+      </div>
+      <div class="stage">
+        <button class="stage__head" aria-expanded="false"><span class="stage__num">04</span><span class="stage__name">DEVELOP</span><i class="stage__plus"></i></button>
+        <div class="stage__body"><div class="stage__inner"><p>Working software in visible increments — you see progress every week.</p>
+          <ul class="tag-row"><li>Frontend</li><li>Backend</li><li>Database</li><li>APIs</li><li>Cloud</li><li>Security</li></ul></div></div>
+      </div>
+      <div class="stage">
+        <button class="stage__head" aria-expanded="false"><span class="stage__num">05</span><span class="stage__name">TEST</span><i class="stage__plus"></i></button>
+        <div class="stage__body"><div class="stage__inner"><p>Manual and automated QA across devices, loads and edge cases.</p>
+          <ul class="tag-row"><li>QA</li><li>Automation</li><li>Performance</li><li>Security</li></ul></div></div>
+      </div>
+      <div class="stage">
+        <button class="stage__head" aria-expanded="false"><span class="stage__num">06</span><span class="stage__name">DEPLOY</span><i class="stage__plus"></i></button>
+        <div class="stage__body"><div class="stage__inner"><p>Zero-drama launches — CI/CD pipelines, monitoring and backups in place.</p>
+          <ul class="tag-row"><li>CI/CD</li><li>Hosting</li><li>Monitoring</li><li>Backups</li></ul></div></div>
+      </div>
+      <div class="stage">
+        <button class="stage__head" aria-expanded="false"><span class="stage__num">07</span><span class="stage__name">SUPPORT</span><i class="stage__plus"></i></button>
+        <div class="stage__body"><div class="stage__inner"><p>We stay — maintenance, new features and evolution as the business grows.</p>
+          <ul class="tag-row"><li>Maintenance</li><li>Features</li><li>SLA</li><li>Evolution</li></ul></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · TECHNOLOGY -->
+  <section id="technology" class="tech section">
+    <div class="shead">
+      <span class="eyebrow" data-reveal>STACK</span>
+      <h2 class="shead__title" data-reveal style="--d:.1s">POWERED BY<br>MODERN TECHNOLOGY</h2>
+    </div>
+    <div class="tech__cloud" id="techCloud">
+      <span class="tech" style="--x:12%;--y:18%;--dur:9s;--del:0s" data-tip="Frontend applications">React</span>
+      <span class="tech" style="--x:70%;--y:14%;--dur:11s;--del:1.2s" data-tip="Backend &amp; APIs">Node.js</span>
+      <span class="tech" style="--x:42%;--y:8%;--dur:10s;--del:.6s" data-tip="Full-stack React framework">Next.js</span>
+      <span class="tech" style="--x:84%;--y:38%;--dur:12s;--del:.3s" data-tip="Type-safe code">TypeScript</span>
+      <span class="tech" style="--x:8%;--y:52%;--dur:10.5s;--del:1.8s" data-tip="NoSQL database">MongoDB</span>
+      <span class="tech" style="--x:34%;--y:44%;--dur:9.5s;--del:.9s" data-tip="Relational database">PostgreSQL</span>
+      <span class="tech" style="--x:58%;--y:52%;--dur:11.5s;--del:.4s" data-tip="Backend platform">Supabase</span>
+      <span class="tech" style="--x:78%;--y:72%;--dur:10s;--del:2s" data-tip="Cloud infrastructure">AWS</span>
+      <span class="tech" style="--x:20%;--y:80%;--dur:12.5s;--del:.7s" data-tip="Deployment &amp; hosting">Vercel</span>
+      <span class="tech" style="--x:50%;--y:76%;--dur:9.8s;--del:1.5s" data-tip="AI &amp; data">Python</span>
+      <span class="tech" style="--x:26%;--y:28%;--dur:10.8s;--del:2.3s" data-tip="Language models">OpenAI</span>
+      <span class="tech" style="--x:64%;--y:30%;--dur:11.2s;--del:.1s" data-tip="Multimodal AI">Gemini</span>
+    </div>
+  </section>
+
+  <!-- 11 · AI -->
+  <section id="ai" class="ai section">
+    <div class="ai__head">
+      <span class="eyebrow" data-reveal>AI AT NXT</span>
+      <h2 class="ai__title">
+        <span data-reveal>AI ISN'T THE FUTURE.</span>
+        <span data-reveal style="--d:.12s"><em>IT'S A TOOL WE BUILD WITH TODAY.</em></span>
+      </h2>
+      <ul class="ai__caps" data-reveal style="--d:.2s">
+        <li>AI AUTOMATION</li><li>AI AGENTS</li><li>CUSTOM AI SYSTEMS</li>
+        <li>AI CHATBOTS</li><li>DATA INTELLIGENCE</li><li>PROCESS AUTOMATION</li>
+      </ul>
+    </div>
+    <div class="ai__demo" data-reveal>
+      <div class="ai__demo-grid">
+        <div class="chat" id="chatWindow" aria-live="polite"></div>
+        <div class="ai__build">
+          <span class="ai__build-label">SYSTEM ARCHITECTURE</span>
+          <div class="pipe" id="aiPipeline">
+            <div class="pipe__node"><b>Customer</b><span>asks a question</span></div>
+            <div class="pipe__link"><i></i></div>
+            <div class="pipe__node"><b>AI Agent</b><span>understands intent</span></div>
+            <div class="pipe__link"><i></i></div>
+            <div class="pipe__node"><b>Knowledge Base</b><span>grounded answers</span></div>
+            <div class="pipe__link"><i></i></div>
+            <div class="pipe__node"><b>CRM</b><span>context logged</span></div>
+            <div class="pipe__link"><i></i></div>
+            <div class="pipe__node"><b>Human Support</b><span>escalation when needed</span></div>
+          </div>
+          <button id="aiReplay" class="btn btn--ghost btn--sm">↺ Replay Demo</button>
+        </div>
+      </div>
+      <a href="#consultation" class="btn btn--gold ai__cta">Build an AI Solution <span class="btn__arr">→</span></a>
+    </div>
+  </section>
+
+  <!-- 12 · ABOUT -->
+  <section id="about" class="about section">
+    <span class="eyebrow" data-reveal>ABOUT</span>
+    <h2 class="about__title">
+      <span data-reveal>WE ARE <em>NXT.</em></span>
+      <span class="about__sub" data-reveal style="--d:.15s">A SOFTWARE TEAM<br>BUILDING DIGITAL<br>SYSTEMS FOR<br>REAL BUSINESSES.</span>
+    </h2>
+    <div class="equation" data-reveal>
+      <span class="eq__part">IDEAS</span><i>+</i>
+      <span class="eq__part">TECHNOLOGY</span><i>+</i>
+      <span class="eq__part">EXECUTION</span><i>=</i>
+      <span class="eq__result">NXT</span>
+    </div>
+    <div class="about__grid">
+      <div class="about__media" data-reveal>
+        <div class="about__media-inner"><span class="am__ring"></span><span class="am__ring am__ring--2"></span><b>NXT</b></div>
+      </div>
+      <div class="about__cell" data-reveal><h4>OUR STORY</h4><p>NXT began with a simple observation: most businesses don't need more software — they need software that finally fits. We started small, stayed technical, and grew by shipping systems people actually use.</p></div>
+      <div class="about__cell" data-reveal style="--d:.1s"><h4>MISSION</h4><p>Engineer digital products that remove friction between people and their work — quietly, reliably, long after launch.</p></div>
+      <div class="about__cell" data-reveal style="--d:.2s"><h4>APPROACH</h4><p>One senior team. Direct communication. Working software early, improved continuously.</p></div>
+      <div class="about__cell" data-reveal style="--d:.3s"><h4>WHAT MAKES US DIFFERENT</h4><p>We think in products, build full-stack, integrate AI where it measurably helps — and we stay after launch.</p></div>
+    </div>
+  </section>
+
+  <!-- 13 · WHY NXT -->
+  <section id="why" class="why section">
+    <div class="shead">
+      <span class="eyebrow" data-reveal>WHY NXT</span>
+      <h2 class="shead__title" data-reveal style="--d:.1s">ONE TEAM.</h2>
+    </div>
+    <div class="why__rows" id="whyRows">
+      <div class="why__row" data-i="0"><span class="why__num">01</span><div class="why__body"><h3>PRODUCT THINKING</h3><p>We start from the business problem, not the tech stack — every decision traces back to an outcome.</p></div></div>
+      <div class="why__row" data-i="1"><span class="why__num">02</span><div class="why__body"><h3>FULL-STACK DEVELOPMENT</h3><p>One team from interface to infrastructure. No hand-offs, no gaps, no blame.</p></div></div>
+      <div class="why__row" data-i="2"><span class="why__num">03</span><div class="why__body"><h3>AI INTEGRATION</h3><p>Practical AI where it measurably helps — agents, automation and intelligence built into real workflows.</p></div></div>
+      <div class="why__row" data-i="3"><span class="why__num">04</span><div class="why__body"><h3>LONG-TERM SUPPORT</h3><p>We build, then we stay. Systems that keep working as the business grows.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 14 · JOURNEY -->
+  <section id="journey" class="jrn section">
+    <div class="shead">
+      <span class="eyebrow" data-reveal>CLIENT JOURNEY</span>
+      <h2 class="shead__title" data-reveal style="--d:.1s">FROM FIRST CALL TO<br>LONG-TERM SUPPORT.</h2>
+    </div>
+    <div class="jrn__grid">
+      <ol class="jrn__list">
+        <li class="jrn__step" data-reveal><h3>YOUR IDEA</h3><p>A conversation, not a specification.</p></li>
+        <li class="jrn__step" data-reveal style="--d:.08s"><h3>DISCOVERY</h3><p>We learn your business and goals.</p></li>
+        <li class="jrn__step" data-reveal style="--d:.16s"><h3>PROPOSAL</h3><p>Clear scope, timeline and pricing.</p></li>
+        <li class="jrn__step" data-reveal style="--d:.24s"><h3>DESIGN</h3><p>Wireframes to polished UI.</p></li>
+        <li class="jrn__step" data-reveal style="--d:.32s"><h3>DEVELOPMENT</h3><p>Built in visible increments.</p></li>
+        <li class="jrn__step" data-reveal style="--d:.4s"><h3>TESTING</h3><p>QA, performance, security.</p></li>
+        <li class="jrn__step" data-reveal style="--d:.48s"><h3>LAUNCH</h3><p>Deployed, monitored, handed over.</p></li>
+        <li class="jrn__step" data-reveal style="--d:.56s"><h3>SUPPORT</h3><p>We stay as you grow.</p></li>
+      </ol>
+      <aside class="jrn__note" data-reveal style="--d:.3s">
+        <b>No technical knowledge required.</b>
+        <span>We handle the technical side — you make the decisions that matter.</span>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 15 · ENGAGEMENT -->
+  <section id="engage" class="eng section">
+    <div class="shead">
+      <span class="eyebrow" data-reveal>ENGAGEMENT</span>
+      <h2 class="shead__title" data-reveal style="--d:.1s">HOW CAN WE<br>WORK TOGETHER?</h2>
+    </div>
+    <div class="eng__grid">
+      <article class="eng__opt" data-reveal>
+        <span class="eng__idx">OPTION 01</span>
+        <h3>PROJECT</h3>
+        <p class="eng__for">For businesses with a defined requirement.</p>
+        <ul><li>Website</li><li>Web App</li><li>Mobile App</li><li>AI Solution</li></ul>
+      </article>
+      <article class="eng__opt eng__opt--mid" data-reveal style="--d:.12s">
+        <span class="eng__idx">OPTION 02</span>
+        <h3>PARTNERSHIP</h3>
+        <p class="eng__for">For businesses that need continuous development.</p>
+        <ul><li>Monthly development</li><li>Maintenance</li><li>New features</li><li>Technical support</li></ul>
+      </article>
+      <article class="eng__opt" data-reveal style="--d:.24s">
+        <span class="eng__idx">OPTION 03</span>
+        <h3>CONSULTING</h3>
+        <p class="eng__for">For businesses that need technical direction.</p>
+        <ul><li>Architecture</li><li>Technology selection</li><li>AI strategy</li><li>Product planning</li><li>Technical audit</li></ul>
+      </article>
+    </div>
+    <div class="eng__cta" data-reveal><a href="#consultation" class="btn btn--gold btn--lg">Find My Option <span class="btn__arr">→</span></a></div>
+  </section>
+
+  <!-- 16/17 · CONSULTATION SELECTOR + RESULT -->
+  <section id="consultation" class="cons section">
+    <div class="shead">
+      <span class="eyebrow" data-reveal>START HERE</span>
+      <h2 class="shead__title" data-reveal style="--d:.1s">LET'S FIND YOUR PATH.</h2>
+    </div>
+    <div class="cons__wrap" data-reveal>
+      <div class="cons__progress" id="consDots" aria-hidden="true">
+        <span class="cons__dot is-on"></span><span class="cons__dot"></span><span class="cons__dot"></span><span class="cons__dot"></span><span class="cons__dot"></span>
+      </div>
+      <div class="cons__flow" id="consFlow">
+        <h3 class="cons__q" id="consQ">WHAT DO YOU NEED?</h3>
+        <div class="cons__opts" id="consOpts" role="radiogroup"></div>
+        <div class="cons__nav">
+          <button id="consBack" class="btn-line" hidden>← Back</button>
+          <span class="cons__step" id="consStep">1 / 4</span>
+          <button id="consNext" class="btn btn--gold btn--sm" disabled>Continue</button>
+        </div>
+      </div>
+      <div class="cons__result" id="consResult" hidden>
+        <span class="eyebrow">YOUR RESULT</span>
+        <h3>THANK YOU.</h3>
+        <p class="cons__understand">We understand what you're looking for.</p>
+        <p class="cons__summary" id="consSummary"></p>
+        <p class="cons__canhelp">YOUR PROJECT MAY REQUIRE</p>
+        <ul class="cons__caps" id="consCaps"></ul>
+        <div class="cons__actions">
+          <a href="#booking" class="btn btn--accent">Book a Consultation <span class="btn__arr">→</span></a>
+          <button id="consRestart" class="btn-line">Start over</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18 · BOOKING -->
+  <section id="booking" class="book section">
+    <div class="shead">
+      <span class="eyebrow" data-reveal>CONSULTATION</span>
+      <h2 class="shead__title" data-reveal style="--d:.1s">LET'S TALK.</h2>
+      <p class="shead__sub" data-reveal style="--d:.18s">Choose a date and time.</p>
+    </div>
+    <div class="book__wrap" data-reveal>
+      <div class="book__dates" id="bookDates" role="group" aria-label="Choose a date"></div>
+      <div class="book__slots" id="bookSlots" role="group" aria-label="Available slots">
+        <button class="slot" data-time="10:00 AM">10:00 AM</button>
+        <button class="slot" data-time="11:30 AM">11:30 AM</button>
+        <button class="slot" data-time="2:00 PM">2:00 PM</button>
+        <button class="slot" data-time="4:30 PM">4:30 PM</button>
+      </div>
+      <form id="bookForm" class="book__form" novalidate>
+        <div class="field"><label for="bName">Name</label><input id="bName" name="name" type="text" autocomplete="name" placeholder="Your full name"></div>
+        <div class="field"><label for="bEmail">Email</label><input id="bEmail" name="email" type="email" autocomplete="email" placeholder="you@company.com"></div>
+        <div class="field"><label for="bCompany">Company</label><input id="bCompany" name="company" type="text" autocomplete="organization" placeholder="Company name (optional)"></div>
+        <div class="field"><label for="bPhone">Phone</label><input id="bPhone" name="phone" type="tel" autocomplete="tel" placeholder="Phone number (optional)"></div>
+        <div class="field field--full"><label for="bProject">Project</label><textarea id="bProject" name="project" rows="4" placeholder="Tell us about your project in a few lines…"></textarea></div>
+        <p class="book__err" id="bookErr" role="alert" hidden></p>
+        <button type="submit" class="btn btn--gold btn--lg book__submit">Request Consultation <span class="btn__arr">→</span></button>
+      </form>
+    </div>
+    <div class="book__done" id="bookDone" hidden>
+      <svg class="done__check" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="33"/><path d="M22 37l10 10 18-20"/></svg>
+      <h3>CONSULTATION REQUESTED</h3>
+      <p>We'll connect with you soon.</p>
+      <span class="book__summary" id="bookSummary"></span>
+      <span class="done__brand">NXT SOFTWARES</span>
+    </div>
+  </section>
+
+  <!-- 19 · FINAL CTA -->
+  <section id="final" class="final">
+    <canvas id="finalCanvas" aria-hidden="true"></canvas>
+    <div class="final__glow" id="finalGlow" aria-hidden="true"></div>
+    <div class="final__inner">
+      <span class="eyebrow" data-reveal>NEXT STEP</span>
+      <h2 class="final__title">
+        <span data-reveal style="--d:.08s">HAVE AN IDEA?</span>
+        <span data-reveal style="--d:.2s"><em>LET'S MAKE<br>IT REAL.</em></span>
+      </h2>
+      <a href="#booking" class="btn btn--gold btn--lg" data-reveal style="--d:.34s">Start a Project <span class="btn__arr">→</span></a>
+    </div>
+  </section>
+</main>
+
+<!-- 20 · CINEMATIC FOOTER (curtain reveal) -->
+<div class="curtain" id="footerCurtain">
+  <footer class="cfoot">
+    <div class="cfoot__aurora" aria-hidden="true"></div>
+    <div class="cfoot__grid" aria-hidden="true"></div>
+    <div class="cfoot__giant" aria-hidden="true">NXT</div>
+
+    <div class="cfoot__marquee" aria-hidden="true">
+      <div class="cfoot__marquee-in" id="footMarquee">
+        <span>Web Products<i>✦</i></span>
+        <span>AI Systems<i>✦</i></span>
+        <span>Mobile Apps<i>✦</i></span>
+        <span>Automation<i>✦</i></span>
+        <span>Consulting<i>✦</i></span>
+        <span>Built For Real Business<i>✦</i></span>
+      </div>
+    </div>
+
+    <div class="cfoot__center">
+      <h2 class="cfoot__heading">Ready to build?</h2>
+      <div class="cfoot__links">
+        <div class="cfoot__row">
+          <a href="#booking" class="pill pill--lg">Start a Project <span class="pill__arr">→</span></a>
+          <a href="#consultation" class="pill pill--lg">Book a Consultation <span class="pill__arr">→</span></a>
+        </div>
+        <nav class="cfoot__row cfoot__row--secondary" aria-label="Footer">
+          <a href="#what-we-build" class="pill pill--sm">Services</a>
+          <a href="#about" class="pill pill--sm">About</a>
+          <a href="#ai" class="pill pill--sm">AI</a>
+          <a href="#" class="pill pill--sm" rel="noopener">Instagram</a>
+          <a href="#" class="pill pill--sm" rel="noopener">LinkedIn</a>
+          <a href="#" class="pill pill--sm" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="cfoot__bottom">
+      <span>© 2026 NXT Softwares · All rights reserved</span>
+      <span class="cfoot__badge"><span>Crafted with</span><i class="cfoot__heart">♥</i><span>by</span><b style="color:var(--ink);font-weight:700;margin-left:.2rem">NXT</b></span>
+      <button id="backTop" class="pill pill--round" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </button>
+    </div>
+  </footer>
+</div>
+
+<script src="js/core.js?v=7" defer></script>
+<script src="js/particles.js?v=2" defer></script>
+<script src="js/hero.js?v=8" defer></script>
+<script src="js/welcome.js?v=1" defer></script>
+<script src="js/sections.js?v=3" defer></script>
+<script src="js/consultation.js?v=2" defer></script>
+<script src="js/main.js?v=2" defer></script>
+</body>
+</html>

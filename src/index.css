@@ -1,0 +1,402 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ---- NXT theme tokens (RGB triplets for Tailwind alpha support) ----
+     Black + Silver + Graphite luxury palette — no gold. */
+  :root {
+    /* light theme: silver-on-white, gunmetal accents */
+    --nxt-bg: 250 250 250; /* near-white */
+    --nxt-navy: 244 244 245; /* section band */
+    --nxt-section: 238 238 240; /* panel */
+    --nxt-card: 255 255 255;
+    --nxt-accent: 86 90 97; /* platinum silver, darkened for contrast on white */
+    --nxt-accent-bright: 23 24 26; /* graphite (hover darkens on light) */
+    --nxt-text: 23 24 26; /* graphite ink */
+    --nxt-text2: 55 58 63; /* gunmetal */
+    --nxt-muted: 115 119 125; /* dark silver */
+    --nxt-border: 222 223 226;
+    --nxt-hover: 246 246 247;
+    --nxt-glow: 168 170 175; /* soft silver glow */
+  }
+
+  .dark {
+    /* dark theme (signature NXT look) */
+    --nxt-bg: 5 5 5; /* obsidian black */
+    --nxt-navy: 11 11 12; /* deep black — section band */
+    --nxt-section: 17 18 19; /* graphite — panel */
+    --nxt-card: 11 11 12; /* deep black — cards */
+    --nxt-accent: 216 218 221; /* platinum silver */
+    --nxt-accent-bright: 245 245 245; /* pure white — hover brightens */
+    --nxt-text: 245 245 245;
+    --nxt-text2: 174 178 183; /* chrome silver */
+    --nxt-muted: 115 119 125; /* dark silver */
+    --nxt-border: 37 39 42; /* gunmetal */
+    --nxt-hover: 23 24 26; /* graphite */
+    --nxt-glow: 216 218 221; /* soft white glow */
+  }
+
+  /* Brushed-metal gradient — buttons, headings, premium accents (both themes) */
+  :root {
+    --nxt-metallic:
+      linear-gradient(
+        120deg,
+        #70757a 0%,
+        #f5f5f5 25%,
+        #aeb2b7 45%,
+        #ffffff 60%,
+        #6f7378 100%
+      );
+  }
+
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 240 4% 96%;
+    --card: 240 5% 5%;
+    --card-foreground: 240 4% 96%;
+    --popover: 240 5% 5%;
+    --extend-foreground: 240 4% 96%;
+    --popover-foreground: 240 4% 96%;
+    --primary: 220 5% 86%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 240 4% 10%;
+    --secondary-foreground: 240 4% 96%;
+    --muted: 240 3% 12%;
+    --muted-foreground: 213 4% 47%;
+    --accent: 240 3% 14%;
+    --accent-foreground: 240 4% 96%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 216 6% 16%;
+    --input: 216 6% 16%;
+    --ring: 220 5% 86%;
+    --radius: 0.375rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-nxt-bg text-nxt-text font-body antialiased;
+  }
+
+  ::selection {
+    background: rgba(168, 170, 175, 0.30);
+    color: inherit;
+  }
+
+  /* scrollbar follows the theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--nxt-bg));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--nxt-border));
+    border-radius: 999px;
+    border: 2px solid rgb(var(--nxt-bg));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--nxt-muted));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(216, 218, 221, 0.6);
+    outline-offset: 2px;
+  }
+
+  /* Hide default focus ring only when using mouse */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* NXT silver glow — soft white shimmer via --nxt-glow (both themes) */
+  .text-glow-accent {
+    text-shadow:
+      0 0 24px rgb(var(--nxt-glow) / 0.35),
+      0 0 60px rgb(var(--nxt-glow) / 0.15);
+  }
+
+  .metal-line {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(var(--nxt-glow) / 0.5),
+      transparent
+    );
+  }
+
+  /* Metallic chrome text — brushed silver gradient clipped to glyphs */
+  .text-metallic {
+    background: var(--nxt-metallic);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Metallic surface — premium CTA background with dark ink on top */
+  .metal-surface {
+    background: var(--nxt-metallic);
+    color: #050505;
+  }
+
+  /* Silver hairline — thin metallic border for premium framing */
+  .metal-hairline {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(rgb(var(--nxt-card)), rgb(var(--nxt-card))) padding-box,
+      var(--nxt-metallic) border-box;
+  }
+
+  /* Metallic shimmer text — slow chrome sweep for the logo/wordmark */
+  .metal-text-shimmer {
+    background: var(--nxt-metallic);
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: nxt-shimmer 6s ease-in-out infinite;
+  }
+
+  @keyframes nxt-shimmer {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .metal-text-shimmer {
+      animation: none;
+    }
+  }
+
+  /* Light theme: the chrome gradient's bright stops vanish on white —
+     fall back to solid graphite for legibility. */
+  html:not(.dark) .metal-text-shimmer {
+    background: none;
+    color: #565a61;
+    animation: none;
+  }
+
+  .text-stroke-faint {
+    -webkit-text-stroke: 1px rgb(var(--nxt-muted) / 0.3);
+    color: transparent;
+  }
+
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+}
+
+/* ---------- Product-mock theme scope ----------
+   Dashboard mocks read these tokens so the same mock renders as a dark
+   product shot in dark mode and a light one in light mode. */
+.nxt-mock {
+  --mock-ink: 255 255 255;
+  --mock-pos: 52 211 153;
+  --mock-pos-soft: 110 231 183;
+  --mock-warn: 251 191 36;
+  --mock-warn-soft: 252 211 77;
+  --mock-neg: 251 113 133;
+  --mock-neg-soft: 253 164 175;
+}
+html:not(.dark) .nxt-mock {
+  --mock-ink: 23 24 26;
+  --mock-pos: 5 150 105;
+  --mock-pos-soft: 4 120 87;
+  --mock-warn: 217 119 6;
+  --mock-warn-soft: 180 83 9;
+  --mock-neg: 225 29 72;
+  --mock-neg-soft: 190 18 60;
+}
+
+/* Ink mapping — every white-* class used by the mocks reads --mock-ink.
+   Alphas are plumbed per property (--mock-t/-b/-bd/-d) so one element can
+   carry e.g. a 7% fill and full-strength text. Status colors flip to
+   darker variants in light mode for contrast. */
+.nxt-mock [class*="text-white"] {
+  color: rgb(var(--mock-ink) / var(--mock-t, 1));
+}
+.nxt-mock [class*="bg-white"] {
+  background-color: rgb(var(--mock-ink) / var(--mock-b, 1));
+}
+.nxt-mock [class*="border-white"] {
+  border-color: rgb(var(--mock-ink) / var(--mock-bd, 1));
+}
+.nxt-mock [class*="divide-white"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgb(var(--mock-ink) / var(--mock-d, 1));
+}
+
+/* Alpha plumbing — enumerated per level actually used in the mocks. */
+.nxt-mock [class*="text-white/25"] { --mock-t: 0.25; }
+.nxt-mock [class*="text-white/30"] { --mock-t: 0.3; }
+.nxt-mock [class*="text-white/35"] { --mock-t: 0.35; }
+.nxt-mock [class*="text-white/40"] { --mock-t: 0.4; }
+.nxt-mock [class*="text-white/50"] { --mock-t: 0.5; }
+.nxt-mock [class*="text-white/55"] { --mock-t: 0.55; }
+.nxt-mock [class*="text-white/60"] { --mock-t: 0.6; }
+.nxt-mock [class*="text-white/70"] { --mock-t: 0.7; }
+.nxt-mock [class*="text-white/75"] { --mock-t: 0.75; }
+.nxt-mock [class*="text-white/80"] { --mock-t: 0.8; }
+.nxt-mock [class*="text-white/85"] { --mock-t: 0.85; }
+.nxt-mock [class*="bg-white/5"] { --mock-b: 0.05; }
+.nxt-mock [class*="bg-white/10"] { --mock-b: 0.1; }
+.nxt-mock [class*="bg-white/15"] { --mock-b: 0.15; }
+.nxt-mock [class*="bg-white/20"] { --mock-b: 0.2; }
+.nxt-mock [class*="bg-white/40"] { --mock-b: 0.4; }
+.nxt-mock [class*="bg-white/45"] { --mock-b: 0.45; }
+.nxt-mock [class*="bg-white/70"] { --mock-b: 0.7; }
+.nxt-mock [class*="bg-white/[0.015]"] { --mock-b: 0.015; }
+.nxt-mock [class*="bg-white/[0.02]"] { --mock-b: 0.02; }
+.nxt-mock [class*="bg-white/[0.03]"] { --mock-b: 0.03; }
+.nxt-mock [class*="bg-white/[0.04]"] { --mock-b: 0.04; }
+.nxt-mock [class*="bg-white/[0.05]"] { --mock-b: 0.05; }
+.nxt-mock [class*="bg-white/[0.06]"] { --mock-b: 0.06; }
+.nxt-mock [class*="bg-white/[0.07]"] { --mock-b: 0.07; }
+.nxt-mock [class*="bg-white/[0.14]"] { --mock-b: 0.14; }
+.nxt-mock [class*="border-white/10"] { --mock-bd: 0.1; }
+.nxt-mock [class*="border-white/[0.05]"] { --mock-bd: 0.05; }
+.nxt-mock [class*="border-white/[0.06]"] { --mock-bd: 0.06; }
+.nxt-mock [class*="border-white/[0.07]"] { --mock-bd: 0.07; }
+.nxt-mock [class*="border-white/[0.08]"] { --mock-bd: 0.08; }
+.nxt-mock [class*="border-white/[0.14]"] { --mock-bd: 0.14; }
+.nxt-mock [class*="divide-white/[0.04]"] { --mock-d: 0.04; }
+.nxt-mock [class*="divide-white/[0.06]"] { --mock-d: 0.06; }
+
+/* Status colors — same hues, contrast-safe per theme. */
+.nxt-mock [class*="text-emerald"] { color: rgb(var(--mock-pos-soft)); }
+.nxt-mock [class*="bg-emerald"] { background-color: rgb(var(--mock-pos) / 0.9); }
+.nxt-mock [class*="bg-emerald-400/10"] { background-color: rgb(var(--mock-pos) / 0.12); }
+.nxt-mock [class*="border-emerald"] { border-color: rgb(var(--mock-pos) / 0.25); }
+.nxt-mock [class*="text-amber"] { color: rgb(var(--mock-warn-soft)); }
+.nxt-mock [class*="bg-amber"] { background-color: rgb(var(--mock-warn) / 0.85); }
+.nxt-mock [class*="text-rose"] { color: rgb(var(--mock-neg-soft)); }
+
+/* Gradient stops used by the mocks (sidebar logo / avatar). */
+.nxt-mock [class*="from-white"] {
+  --tw-gradient-from: rgb(var(--mock-ink) / var(--mock-f, 1));
+}
+.nxt-mock [class*="to-white"] {
+  --tw-gradient-to: rgb(var(--mock-ink) / var(--mock-to, 1));
+}
+.nxt-mock [class*="from-white/25"] { --mock-f: 0.25; }
+.nxt-mock [class*="from-white/30"] { --mock-f: 0.3; }
+.nxt-mock [class*="to-white/5"] { --mock-to: 0.05; }
+.nxt-mock [class*="to-white/10"] { --mock-to: 0.1; }
+
+/* Dark panels inside the mocks (code blocks, stage frame). */
+.nxt-mock { --mock-code: rgba(0, 0, 0, 0.45); --mock-frame: rgba(0, 0, 0, 0.3); }
+html:not(.dark) .nxt-mock { --mock-code: rgba(23, 24, 26, 0.05); --mock-frame: rgba(255, 255, 255, 0.55); }
+.nxt-mock [class*="bg-black/40"] { background-color: var(--mock-code); }
+.nxt-mock [class*="bg-black/30"] { background-color: var(--mock-frame); }
+
+/* ---------- Work stage gradients (theme-aware) ---------- */
+.nxt-stage-a {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--nxt-navy)) 0%,
+    rgb(var(--nxt-section)) 55%,
+    rgb(var(--nxt-hover)) 100%
+  );
+}
+.nxt-stage-b {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--nxt-navy)) 0%,
+    rgb(var(--nxt-card)) 55%,
+    rgb(var(--nxt-section)) 100%
+  );
+}
+.nxt-stage-c {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--nxt-card)) 0%,
+    rgb(var(--nxt-navy)) 55%,
+    rgb(var(--nxt-section)) 100%
+  );
+}
+
+/* ---------- Hero chrome sweep + scroll indicator ---------- */
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(300%);
+    opacity: 0;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

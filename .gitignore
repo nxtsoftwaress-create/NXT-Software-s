@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Compiled config artifacts (generated from vite.config.ts)
+vite.config.js
+vite.config.d.ts
+
+# Env & secrets
+.env
+.env.*
+*.local
+
+# Workspace metadata
+.freebuff/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini

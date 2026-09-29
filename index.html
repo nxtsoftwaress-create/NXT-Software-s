@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NXT Softwares — We Build What's Next</title>
+    <meta
+      name="description"
+      content="NXT Softwares — a software team building digital products, AI systems, and technology solutions for businesses ready for what's next."
+    />
+    <meta name="theme-color" content="#050505" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050505'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='%23D8DADD' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #nxt-boot {
+        position: fixed;
+        inset: 0;
+        background: #050505;
+        z-index: 2147483647;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.6s ease;
+      }
+      #nxt-boot.done {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .boot-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+      }
+      .boot-word {
+        color: #d8dadd;
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.55em;
+        margin-left: 0.55em;
+        animation: boot-fade 0.8s ease-out both;
+      }
+      .boot-line {
+        width: 140px;
+        height: 1px;
+        background: #25272a;
+        position: relative;
+        overflow: hidden;
+      }
+      .boot-line::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, #aeb2b7, #f5f5f5, #aeb2b7);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: boot-fill 1.1s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
+      }
+      @keyframes boot-fade {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes boot-fill {
+        to {
+          transform: scaleX(1);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-word,
+        .boot-line::after {
+          animation-duration: 0.01s;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      /* Theme init — runs before first paint to avoid a flash of the wrong theme.
+         Default is dark (the signature NXT look); honors saved choice, then system. */
+      ;(function () {
+        var dark
+        try {
+          var saved = localStorage.getItem("nxt-theme")
+          dark =
+            saved === "dark" ||
+            (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        } catch (e) {
+          dark = true
+        }
+        if (dark) document.documentElement.classList.add("dark")
+        document.documentElement.style.background = dark ? "#050505" : "#fafaf9"
+      })()
+    </script>
+    <div id="nxt-boot" aria-hidden="true">
+      <div class="boot-inner">
+        <div class="boot-word">NXT SOFTWARES</div>
+        <div class="boot-line"></div>
+      </div>
+    </div>
+    <script>
+      // Fallback: never trap the visitor behind the boot screen.
+      window.__nxtBootStart = Date.now()
+      window.setTimeout(function () {
+        var b = document.getElementById("nxt-boot")
+        if (b) b.remove()
+      }, 4000)
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
