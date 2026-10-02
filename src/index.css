@@ -359,30 +359,13 @@ html:not(.dark) .nxt-mock { --mock-code: rgba(23, 24, 26, 0.05); --mock-frame: r
   );
 }
 
-/* ---------- Hero chrome sweep + scroll indicator ---------- */
+/* ---------- Hero chrome sweep ---------- */
 @keyframes shimmer {
   0% {
     background-position: 200% center;
   }
   100% {
     background-position: -200% center;
-  }
-}
-
-@keyframes scrollLine {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(300%);
-    opacity: 0;
   }
 }
 
