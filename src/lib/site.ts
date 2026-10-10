@@ -11,6 +11,7 @@ export const PHONE_DISPLAY = "+91 85000 95512"
 export const PHONE_TEL = `tel:+${WHATSAPP_NUMBER}`
 
 export const LINKEDIN_URL = "https://www.linkedin.com/company/nxtsoftwaress"
+export const INSTAGRAM_URL = "https://www.instagram.com/nxtsoftwares/"
 export const GITHUB_URL = "https://github.com/nxtsoftwares"
 export const EMAIL_HELLO = "nxtsoftwaress@gmail.com"
 

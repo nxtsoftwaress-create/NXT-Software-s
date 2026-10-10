@@ -6,21 +6,17 @@ import { getTheme, toggleTheme, type Theme } from "@/lib/theme"
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>(() => getTheme())
 
-  // Follow the system if the visitor never chose a theme themselves.
+  // Dark is the brand default; stay put if the OS flips while a visitor is browsing.
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)")
-    const onChange = (e: MediaQueryListEvent) => {
+    const onChange = () => {
       let hasChoice = false
       try {
         hasChoice = !!localStorage.getItem("nxt-theme")
       } catch {
         /* ignore */
       }
-      if (!hasChoice) {
-        const next: Theme = e.matches ? "dark" : "light"
-        document.documentElement.classList.toggle("dark", e.matches)
-        setTheme(next)
-      }
+      if (!hasChoice) setTheme("dark")
     }
     mq.addEventListener("change", onChange)
     return () => mq.removeEventListener("change", onChange)

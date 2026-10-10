@@ -1,5 +1,5 @@
-import { ArrowUp, Github, Linkedin, MessageCircle } from "lucide-react"
-import { GITHUB_URL, LINKEDIN_URL, WHATSAPP_URL, LEGAL_ROUTES } from "@/lib/site"
+import { ArrowUp, Github, Instagram, Linkedin, MessageCircle } from "lucide-react"
+import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, WHATSAPP_URL, LEGAL_ROUTES } from "@/lib/site"
 
 const marqueeItems = [
   "Web Products",
@@ -13,6 +13,7 @@ const marqueeItems = [
 const socials = [
   { icon: MessageCircle, label: "WhatsApp", href: WHATSAPP_URL },
   { icon: Linkedin, label: "LinkedIn", href: LINKEDIN_URL },
+  { icon: Instagram, label: "Instagram", href: INSTAGRAM_URL },
   { icon: Github, label: "GitHub", href: GITHUB_URL },
 ]
 
@@ -102,8 +103,8 @@ export function Footer() {
 
         {/* giant wordmark */}
         <div className="pointer-events-none mt-16 select-none overflow-hidden" aria-hidden="true">
-          <div className="text-stroke-faint text-center font-display text-[26vw] font-bold leading-[0.8] opacity-40 md:text-[20vw]">
-            NXT
+          <div className="text-stroke-faint text-center font-display font-bold leading-[0.8] opacity-40 whitespace-nowrap text-[11.2vw] sm:text-[10vw] md:text-[8.6vw]">
+            NXT Softwares
           </div>
         </div>
 

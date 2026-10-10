@@ -91,14 +91,12 @@
   <body>
     <script>
       /* Theme init — runs before first paint to avoid a flash of the wrong theme.
-         Default is dark (the signature NXT look); honors saved choice, then system. */
+         Default is dark (the signature NXT look); a saved choice always wins. */
       ;(function () {
         var dark
         try {
           var saved = localStorage.getItem("nxt-theme")
-          dark =
-            saved === "dark" ||
-            (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)
+          dark = saved !== "light"
         } catch (e) {
           dark = true
         }
