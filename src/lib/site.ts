@@ -10,7 +10,7 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
 export const PHONE_DISPLAY = "+91 85000 95512"
 export const PHONE_TEL = `tel:+${WHATSAPP_NUMBER}`
 
-export const LINKEDIN_URL = "https://www.linkedin.com/company/nxt-softwares"
+export const LINKEDIN_URL = "https://www.linkedin.com/company/nxtsoftwaress"
 export const GITHUB_URL = "https://github.com/nxtsoftwares"
 export const EMAIL_HELLO = "nxtsoftwaress@gmail.com"
 
