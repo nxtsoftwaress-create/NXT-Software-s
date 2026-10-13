@@ -36,16 +36,30 @@ const InfiniteSlider = memo(function InfiniteSlider({
   className,
 }: InfiniteSliderProps) {
   const [currentDuration, setCurrentDuration] = useState(duration)
-  const [ref, { width, height }] = useMeasure()
+  const [containerRef, { width: viewportWidth }] = useMeasure()
+  const [setRef, { width: setWidth, height: setHeight }] = useMeasure()
   const translation = useMotionValue(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [key, setKey] = useState(0)
 
+  // One copy of the content plus one gap is the seamless loop distance.
+  const isHorizontal = direction === "horizontal"
+  const setSize = isHorizontal ? setWidth : setHeight
+  const loopSize = setSize + gap
+
+  // Render enough copies that the track always spans the full viewport —
+  // otherwise wide screens show the strip "starting from the middle" with a
+  // dead gap on one side. +1 keeps a full viewport of content in reserve
+  // while the track slides one loop ahead.
+  const copies =
+    loopSize > 0 && viewportWidth > 0
+      ? Math.max(2, Math.ceil(viewportWidth / loopSize) + 1)
+      : 2
+
   useEffect(() => {
-    const size = direction === "horizontal" ? width : height
-    const contentSize = size + gap
-    const from = reverse ? -contentSize / 2 : 0
-    const to = reverse ? 0 : -contentSize / 2
+    if (!loopSize) return
+    const from = reverse ? -loopSize : 0
+    const to = reverse ? 0 : -loopSize
 
     let controls: ReturnType<typeof animate> | undefined
 
@@ -53,7 +67,7 @@ const InfiniteSlider = memo(function InfiniteSlider({
       controls = animate(translation, [translation.get(), to], {
         ease: "linear",
         duration:
-          currentDuration * Math.abs((translation.get() - to) / contentSize),
+          currentDuration * Math.abs((translation.get() - to) / loopSize),
         onComplete: () => {
           setIsTransitioning(false)
           setKey((prev) => prev + 1)
@@ -75,11 +89,11 @@ const InfiniteSlider = memo(function InfiniteSlider({
     key,
     translation,
     currentDuration,
-    width,
-    height,
+    setSize,
+    loopSize,
     gap,
     isTransitioning,
-    direction,
+    isHorizontal,
     reverse,
   ])
 
@@ -97,21 +111,40 @@ const InfiniteSlider = memo(function InfiniteSlider({
     : {}
 
   return (
-    <div className={cn("overflow-hidden", className)}>
+    <div ref={containerRef} className={cn("overflow-hidden", className)}>
       <motion.div
-        ref={ref}
         className="flex w-max"
         style={{
-          ...(direction === "horizontal"
-            ? { x: translation }
-            : { y: translation }),
+          ...(isHorizontal ? { x: translation } : { y: translation }),
           gap: `${gap}px`,
-          flexDirection: direction === "horizontal" ? "row" : "column",
+          flexDirection: isHorizontal ? "row" : "column",
         }}
         {...hoverProps}
       >
-        {children}
-        {children}
+        {/* first copy measured once; this set + one gap is the loop unit */}
+        <div
+          ref={setRef}
+          className="flex"
+          style={{
+            gap: `${gap}px`,
+            flexDirection: isHorizontal ? "row" : "column",
+          }}
+        >
+          {children}
+        </div>
+        {Array.from({ length: copies - 1 }).map((_, i) => (
+          <div
+            key={i}
+            aria-hidden="true"
+            className="flex"
+            style={{
+              gap: `${gap}px`,
+              flexDirection: isHorizontal ? "row" : "column",
+            }}
+          >
+            {children}
+          </div>
+        ))}
       </motion.div>
     </div>
   )
