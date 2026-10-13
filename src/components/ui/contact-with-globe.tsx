@@ -912,6 +912,7 @@ export default function ContactWithGlobe({
                   </label>
                   <input
                     id="contact-name"
+                    name="name"
                     type="text"
                     required
                     placeholder="Ahdeetai"
@@ -927,6 +928,7 @@ export default function ContactWithGlobe({
                   </label>
                   <input
                     id="contact-company"
+                    name="company"
                     type="text"
                     placeholder="NXT Softwares"
                     className="w-full rounded-xl border border-nxt-border bg-nxt-bg/50 px-4 py-2.5 text-sm text-nxt-text outline-none transition-all duration-200 placeholder:text-nxt-muted/60 focus:border-nxt-accent/60 focus:ring-2 focus:ring-nxt-accent/10"
@@ -943,6 +945,7 @@ export default function ContactWithGlobe({
                 </label>
                 <input
                   id="contact-email"
+                  name="email"
                   type="email"
                   required
                   placeholder="you@company.com"
@@ -959,6 +962,7 @@ export default function ContactWithGlobe({
                 </label>
                 <textarea
                   id="contact-message"
+                  name="message"
                   placeholder="Type your message here"
                   rows={4}
                   required
