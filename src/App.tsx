@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Analytics } from "@/components/analytics"
 import { WelcomePopup } from "@/components/welcome/welcome-popup"
 import { CookieConsent } from "@/components/ui/cookie-consent"
 import { LegalPage } from "@/components/ui/legal-page"
@@ -35,6 +36,7 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-nxt-bg font-body text-nxt-text">
+      <Analytics />
       {onLegal ? (
         <LegalPage />
       ) : (
