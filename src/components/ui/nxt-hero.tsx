@@ -135,6 +135,10 @@ export function NXTHero({
 
           {/* Headline — solid line + chrome shimmer line */}
           <h1 className="text-[clamp(3.5rem,9vw,8.5rem)] font-medium leading-[0.86] tracking-[-0.075em]">
+            {/* Keyword context for search engines without changing the visual design */}
+            <span className="sr-only">
+              NXT Softwares — custom software and AI development for growing businesses:{" "}
+            </span>
             <span className={`block ${ink.solid}`}>{titleSolid}</span>
             <span
               className={`block animate-[shimmer_5s_linear_infinite] bg-[length:250%_100%] bg-clip-text text-transparent ${ink.chrome}`}

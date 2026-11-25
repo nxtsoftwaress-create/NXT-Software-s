@@ -88,14 +88,14 @@ export function WelcomePopup({ onComplete }: WelcomePopupProps) {
 
             {/* Big metallic wordmark — hero type treatment scaled so
                 "NXT SOFTWARES" always sits on one line */}
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 28, letterSpacing: "0.08em" }}
               animate={{ opacity: 1, y: 0, letterSpacing: "-0.075em" }}
               transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="text-metallic whitespace-nowrap text-[clamp(1.9rem,7vw,7.5rem)] font-medium leading-[0.86] tracking-[-0.075em]"
             >
               NXT SOFTWARES
-            </motion.h1>
+            </motion.div>
 
             {/* Metallic hairline under the wordmark */}
             <motion.div
